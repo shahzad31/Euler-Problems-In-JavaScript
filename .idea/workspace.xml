@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="660a29f0-9a61-4581-8e0f-b766b82e77e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Problem 05/Solution 05.js" afterPath="$PROJECT_DIR$/Problem 05/Solution 05.js" />
-    </list>
+    <list default="true" id="660a29f0-9a61-4581-8e0f-b766b82e77e6" name="Default" comment="" />
     <ignored path="Euler-Problems-In-JavaScript.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,11 +33,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Solution 06.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Solution 06.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Problem 06/Solution 06.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42967033">
+            <state vertical-scroll-proportion="0.0">
               <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Solution 07.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Problem 07/Solution 07.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2989011">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -68,6 +78,7 @@
         <option value="$PROJECT_DIR$/Problem 04/Solution 04.js" />
         <option value="$PROJECT_DIR$/Problem 05/Solution 05.js" />
         <option value="$PROJECT_DIR$/Problem 06/Solution 06.js" />
+        <option value="$PROJECT_DIR$/Problem 07/Solution 07.js" />
       </list>
     </option>
   </component>
@@ -124,6 +135,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Euler-Problems-In-JavaScript" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Euler-Problems-In-JavaScript" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Euler-Problems-In-JavaScript" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Problem 07" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -398,8 +423,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Problem 06/Solution 06.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42967033">
+        <state vertical-scroll-proportion="0.0">
           <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Problem 07/Solution 07.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2989011">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
