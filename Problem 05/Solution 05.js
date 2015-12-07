@@ -23,4 +23,4 @@ var findSmallestEvenlyDivisibleNo= function (start, end) {
     console.log("in seconds"+(nowDate-date)/1000);
     return number;
 };
-findSmallestEvenlyDivisibleNo(1,10);
+findSmallestEvenlyDivisibleNo(1,20);
