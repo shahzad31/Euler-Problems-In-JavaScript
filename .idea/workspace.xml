@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="660a29f0-9a61-4581-8e0f-b766b82e77e6" name="Default" comment="" />
+    <list default="true" id="660a29f0-9a61-4581-8e0f-b766b82e77e6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Problem 08/Solution 08.js" afterPath="$PROJECT_DIR$/Problem 08/Solution 08.js" />
+    </list>
     <ignored path="Euler-Problems-In-JavaScript.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,8 +62,8 @@
       <file leaf-file-name="Solution 08.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Problem 08/Solution 08.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6076923">
-              <caret line="40" column="69" selection-start-line="40" selection-start-column="69" selection-end-line="40" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.26153848">
+              <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -468,8 +470,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Problem 08/Solution 08.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6076923">
-          <caret line="40" column="69" selection-start-line="40" selection-start-column="69" selection-end-line="40" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.26153848">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
           <folding />
         </state>
       </provider>

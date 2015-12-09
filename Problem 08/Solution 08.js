@@ -38,22 +38,26 @@ var findNthDigitWithMaxProduct= function (no) {
         "9091888458015616609791913387549920052406368991256071760605886116467109405077541002256983155200055935729725716362" +
         "69561882670428252483600823257530420752963450";
     var product;
-    var buffer=[Digit1000[0],Digit1000[1],Digit1000[2],Digit1000[3]];
+    var buffer=[];
+
+    for(var k=0;k<no;k++){
+        buffer.push(+Digit1000[k])
+    }
     var findProduct= function (arr) {
-      arr.reduce(function (a, b) {
-          return a*b;
-      })
+        return arr.reduce(function (a, b) {
+            return a*b;
+        })
     };
     var currentMax=findProduct(buffer);
     for(var i=0;i<Digit1000.length;i++){
-        buffer.splice();
-        buffer.push(Digit1000[i]);
-        if(buffer.length==4){
-            var prod=findProduct(buffer);
-            if(prod>currentMax){
-                currentMax=prod;
-            }
+        buffer.splice(0,1);
+        buffer.push(+Digit1000[i]);
+        var prod=findProduct(buffer);
+        if(prod>currentMax){
+            currentMax=prod;
         }
     }
+    return currentMax;
 };
-findNthDigitWithMaxProduct(3);
+findNthDigitWithMaxProduct(4); //5832
+findNthDigitWithMaxProduct(13); //23514624000
