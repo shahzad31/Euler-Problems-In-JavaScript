@@ -51,6 +51,67 @@ var findProductOfAdjacent= function () {
         " 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54" +
         " 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
     matrix=matrix.split(" ");
+    var isTop = function (firstIndex, secondIndex) {
+        if(firstIndex<20){
+            return false;
+        }
+        var diff=firstIndex-secondIndex;
+        if(diff%20==0 && diff!=20){
+            return true;
+        }
+    };
+    var isLeft = function (firstIndex, secondIndex) {
+        if(firstIndex>secondIndex){
+            return false;
+        }
+        if(firstIndex%20==0){
+            return false;
+        }
+        return secondIndex-firstIndex==1;
+    };
+    var isRight = function (firstIndex, secondIndex) {
+        if(secondIndex>firstIndex){
+            return false;
+        }
+        if((firstIndex-1)%20==0){
+            return false;
+        }
+        return firstIndex-secondIndex==1;
+    };
+    var isBottom = function (firstIndex, secondIndex) {
+        if(firstIndex>secondIndex){
+            return false;
+        }
+        if(firstIndex>380){
+            return false;
+        }
+        var diff=secondIndex-firstIndex;
+        if(diff%20==0){
+            return true;
+        }
+    };
+
+    var isDiagonal= function (firstIndex, secondIndex) {
+
+    };
+    var findAdjacentNumbers= function (ind) {
+        var neighbours=[];
+        for(var i= 1,l=matrix.length;i<=l;i++){
+            if(i!=ind)
+            {
+                if(isTop(ind,i)||isBottom(ind,i)||isLeft(ind,i)||isRight(ind,i)||isDiagonal(ind,i)){
+                    neighbours.push(matrix[i-1]);
+                }
+            }
+        }
+        return neighbours;
+    };
+    var product=1;
+
+    for(var i= 0,l=matrix.length;i<l;i++){
+        var currentItem=+matrix[i];
+        var currentProd=findAdjacentNumbers(i);
+    }
 
 };
 findProductOfAdjacent();
