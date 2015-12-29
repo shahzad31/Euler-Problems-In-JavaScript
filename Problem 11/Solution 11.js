@@ -55,8 +55,11 @@ var findProductOfAdjacent= function () {
         if(firstIndex<20){
             return false;
         }
+        if(firstIndex<secondIndex){
+            return false;
+        }
         var diff=firstIndex-secondIndex;
-        if(diff%20==0 && diff!=20){
+        if(diff==20){
             return true;
         }
     };
@@ -78,6 +81,25 @@ var findProductOfAdjacent= function () {
         }
         return firstIndex-secondIndex==1;
     };
+    var findXYOfIndex= function (ind) {
+        var y=Math.trunc(ind/20);
+        var x=ind%20;
+        return [x,y];
+    };
+    var findDistance=function(ind1,ind2){
+        var p1=findXYOfIndex(ind1);
+        var p2=findXYOfIndex(ind2);
+        var diffX=Math.abs(p2[0]-p1[0]);
+        var diffY=Math.abs(p2[1]-p1[1]);
+        return diffX+diffY;
+    };
+    var findAngle= function (ind1, ind2) {
+      var p1=findXYOfIndex(ind1);
+        var p2=findXYOfIndex(ind2);
+        var diffX= p2[0]-p1[0];
+        var diffY=p2[1]-p1[1];
+        return Math.atan2(diffY,diffX);
+    };
     var isBottom = function (firstIndex, secondIndex) {
         if(firstIndex>secondIndex){
             return false;
@@ -86,20 +108,26 @@ var findProductOfAdjacent= function () {
             return false;
         }
         var diff=secondIndex-firstIndex;
-        if(diff%20==0){
+        if(diff==20){
             return true;
         }
     };
 
     var isDiagonal= function (firstIndex, secondIndex) {
-
+        var diff=Math.abs(secondIndex-firstIndex);
+        var angle=findAngle(firstIndex-1,secondIndex-1);
+        if(angle==0||angle==180){
+            return false;
+        }
+        if((diff==21||diff==19) &&findDistance(firstIndex-1,secondIndex-1)==2 ){
+            return true;
+        }
     };
     var findAdjacentNumbers= function (ind) {
         var neighbours=[];
         for(var i= 1,l=matrix.length;i<=l;i++){
-            if(i!=ind)
-            {
-                if(isTop(ind,i)||isBottom(ind,i)||isLeft(ind,i)||isRight(ind,i)||isDiagonal(ind,i)){
+            if(i!=ind){
+                if(isTop(i,ind)||isBottom(i,ind)||isLeft(i,ind)||isRight(i,ind)||isDiagonal(i,ind)){
                     neighbours.push(matrix[i-1]);
                 }
             }
@@ -108,10 +136,15 @@ var findProductOfAdjacent= function () {
     };
     var product=1;
 
-    for(var i= 0,l=matrix.length;i<l;i++){
-        var currentItem=+matrix[i];
-        var currentProd=findAdjacentNumbers(i);
+    for(var i= 1,l=matrix.length;i<l;i++){
+        var currentItem=+matrix[i-1];
+        var currentProd=findAdjacentNumbers(i).reduce(function (a, b) {
+            return a*b;
+        });
+        if(currentProd>product){
+            product=currentProd;
+        }
     }
-
+    return product;
 };
 findProductOfAdjacent();
