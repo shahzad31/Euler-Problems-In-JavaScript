@@ -29,7 +29,7 @@
  What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?*/
 
 var findProductOfAdjacent= function () {
-    var matrix=
+    var matrix =
         "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08" +
         " 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00" +
         " 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65" +
@@ -50,37 +50,7 @@ var findProductOfAdjacent= function () {
         " 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16" +
         " 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54" +
         " 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
-    matrix=matrix.split(" ");
-    var isTop = function (firstIndex, secondIndex) {
-        if(firstIndex<20){
-            return false;
-        }
-        if(firstIndex<secondIndex){
-            return false;
-        }
-        var diff=firstIndex-secondIndex;
-        if(diff==20){
-            return true;
-        }
-    };
-    var isLeft = function (firstIndex, secondIndex) {
-        if(firstIndex>secondIndex){
-            return false;
-        }
-        if(firstIndex%20==0){
-            return false;
-        }
-        return secondIndex-firstIndex==1;
-    };
-    var isRight = function (firstIndex, secondIndex) {
-        if(secondIndex>firstIndex){
-            return false;
-        }
-        if((firstIndex-1)%20==0){
-            return false;
-        }
-        return firstIndex-secondIndex==1;
-    };
+    matrix = matrix.split(" ");
     var findXYOfIndex= function (ind) {
         var y=Math.trunc(ind/20);
         var x=ind%20;
@@ -94,46 +64,20 @@ var findProductOfAdjacent= function () {
         return diffX+diffY;
     };
     var findAngle= function (ind1, ind2) {
-      var p1=findXYOfIndex(ind1);
+        var p1=findXYOfIndex(ind1);
         var p2=findXYOfIndex(ind2);
         var diffX= p2[0]-p1[0];
         var diffY=p2[1]-p1[1];
         return Math.atan2(diffY,diffX);
     };
-    var isBottom = function (firstIndex, secondIndex) {
-        if(firstIndex>secondIndex){
-            return false;
+    var findAdjacentNumbers = function (ind) {
+        var numbers = [];
+        for (var i = 1, l = matrix.length; i <= l; i++) {
+            numbers.push(matrix[i - 1]);
         }
-        if(firstIndex>380){
-            return false;
-        }
-        var diff=secondIndex-firstIndex;
-        if(diff==20){
-            return true;
-        }
+        return numbers;
     };
 
-    var isDiagonal= function (firstIndex, secondIndex) {
-        var diff=Math.abs(secondIndex-firstIndex);
-        var angle=findAngle(firstIndex-1,secondIndex-1);
-        if(angle==0||angle==180){
-            return false;
-        }
-        if((diff==21||diff==19) &&findDistance(firstIndex-1,secondIndex-1)==2 ){
-            return true;
-        }
-    };
-    var findAdjacentNumbers= function (ind) {
-        var neighbours=[];
-        for(var i= 1,l=matrix.length;i<=l;i++){
-            if(i!=ind){
-                if(isTop(i,ind)||isBottom(i,ind)||isLeft(i,ind)||isRight(i,ind)||isDiagonal(i,ind)){
-                    neighbours.push(matrix[i-1]);
-                }
-            }
-        }
-        return neighbours;
-    };
     var product=1;
 
     for(var i= 1,l=matrix.length;i<l;i++){
